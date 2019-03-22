@@ -305,6 +305,11 @@ namespace vks
 				enableDebugMarkers = true;
 			}
 
+			if (extensionSupported(VK_EXT_DEPTH_RANGE_UNRESTRICTED_EXTENSION_NAME))
+			{
+				deviceExtensions.push_back(VK_EXT_DEPTH_RANGE_UNRESTRICTED_EXTENSION_NAME);
+			}
+
 			if (deviceExtensions.size() > 0)
 			{
 				deviceCreateInfo.enabledExtensionCount = (uint32_t)deviceExtensions.size();

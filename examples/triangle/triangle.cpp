@@ -261,7 +261,7 @@ public:
 		// We use two attachments (color and depth) that are cleared at the start of the subpass and as such we need to set clear values for both
 		VkClearValue clearValues[2];
 		clearValues[0].color = { { 0.0f, 0.0f, 0.2f, 1.0f } };
-		clearValues[1].depthStencil = { 1.0f, 0 };
+		clearValues[1].depthStencil = { 5.0f, 0 };
 
 		VkRenderPassBeginInfo renderPassBeginInfo = {};
 		renderPassBeginInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
@@ -290,7 +290,7 @@ public:
 			viewport.height = (float)height;
 			viewport.width = (float)width;
 			viewport.minDepth = (float) 0.0f;
-			viewport.maxDepth = (float) 1.0f;
+			viewport.maxDepth = (float) 10.f;
 			vkCmdSetViewport(drawCmdBuffers[i], 0, 1, &viewport);
 
 			// Update dynamic scissor state
@@ -863,7 +863,7 @@ public:
 		rasterizationState.polygonMode = VK_POLYGON_MODE_FILL;
 		rasterizationState.cullMode = VK_CULL_MODE_NONE;
 		rasterizationState.frontFace = VK_FRONT_FACE_COUNTER_CLOCKWISE;
-		rasterizationState.depthClampEnable = VK_FALSE;
+		rasterizationState.depthClampEnable = VK_TRUE;
 		rasterizationState.rasterizerDiscardEnable = VK_FALSE;
 		rasterizationState.depthBiasEnable = VK_FALSE;
 		rasterizationState.lineWidth = 1.0f;

@@ -415,7 +415,7 @@ namespace vks
 			pipelineRasterizationStateCreateInfo.cullMode = cullMode;
 			pipelineRasterizationStateCreateInfo.frontFace = frontFace;
 			pipelineRasterizationStateCreateInfo.flags = flags;
-			pipelineRasterizationStateCreateInfo.depthClampEnable = VK_FALSE;
+			pipelineRasterizationStateCreateInfo.depthClampEnable = VK_TRUE;
 			pipelineRasterizationStateCreateInfo.lineWidth = 1.0f;
 			return pipelineRasterizationStateCreateInfo;
 		}
