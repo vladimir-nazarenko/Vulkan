@@ -308,6 +308,8 @@ namespace vks
 			if (extensionSupported(VK_EXT_DEPTH_RANGE_UNRESTRICTED_EXTENSION_NAME))
 			{
 				deviceExtensions.push_back(VK_EXT_DEPTH_RANGE_UNRESTRICTED_EXTENSION_NAME);
+			} else {
+				throw std::runtime_error("Unrestricted depth is not supported!");
 			}
 
 			if (deviceExtensions.size() > 0)

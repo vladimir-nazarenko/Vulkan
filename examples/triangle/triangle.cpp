@@ -28,7 +28,7 @@
 #include "vulkanexamplebase.h"
 
 // Set to "true" to enable Vulkan's validation layers (see vulkandebug.cpp for details)
-#define ENABLE_VALIDATION false
+#define ENABLE_VALIDATION true
 // Set to "true" to use staging buffers for uploading vertex and index data to device local memory
 // See "prepareVertices" for details on what's staging and on why to use it
 #define USE_STAGING true
@@ -652,7 +652,7 @@ public:
 		depthStencilView.viewType = VK_IMAGE_VIEW_TYPE_2D;
 		depthStencilView.format = depthFormat;
 		depthStencilView.subresourceRange = {};
-		depthStencilView.subresourceRange.aspectMask = VK_IMAGE_ASPECT_DEPTH_BIT | VK_IMAGE_ASPECT_STENCIL_BIT;
+		depthStencilView.subresourceRange.aspectMask = VK_IMAGE_ASPECT_DEPTH_BIT;
 		depthStencilView.subresourceRange.baseMipLevel = 0;
 		depthStencilView.subresourceRange.levelCount = 1;
 		depthStencilView.subresourceRange.baseArrayLayer = 0;
